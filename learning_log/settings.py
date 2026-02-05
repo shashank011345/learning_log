@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get("RENDER_EXTERNAL_HOSTNAME")] if os.environ.get("RENDER_EXTERNAL_HOSTNAME") else []
+ALLOWED_HOSTS = ["learning-log-gmn3.onrender.com"]
 
 
 # Application definition
