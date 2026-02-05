@@ -1,0 +1,20 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<div class="jumbotron">
+  <h1 class="display-3">Turn curiosity into progress.</h1>
+  <p class="lead"> With Learning Log, you don’t just record facts — you build a timeline of growth. See how your skills expand, revisit past insights, and connect the dots between different topics. It’s more than a notebook; it’s a personal archive of your learning journey. </p> 
+  <p class="lead"> Whether you’re a student tracking courses, a developer logging code experiments, or a lifelong learner exploring new hobbies, Learning Log adapts to you. Every entry becomes a milestone, showing how far you’ve come and where you’re heading. </p> 
+  <p class="lead fw-bold" style="font-weight:400;"> Simple. Organized. Motivating. Your knowledge deserves a place to grow. </p>
+  {% if not user.is_authenticated %}
+    <a class="btn btn-lg text-white" href="{% url 'users:register' %}" role="button" style="background-color:#093685;">
+      Start your journey &raquo;
+    </a>
+  {% else %}
+    <a class="btn btn-lg btn-success" href="{% url 'learning_logs:topics' %}" role="button">
+      Continue learning &raquo;
+    </a>
+  {% endif %}
+</div>
+
+{% endblock page_header %}
